@@ -4,4 +4,7 @@
 */
 :root {
   --accent-color: #FF0070;
+  --offset: 10px;
+  --logo-color: #DB00FF;
+  --dark-btn-hover-color: rgba(255, 0, 112, 0.40);
 } 
