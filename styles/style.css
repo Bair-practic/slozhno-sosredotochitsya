@@ -1,17 +1,24 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.title-decor {
-  background-color: var(--accent-color);
+
+
+.page {
+  background-image: url(/images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-color: #000028;
+
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
  /* HEADER*/
 
 .header {
-  background-image: url(/images/cover-image-dark.png);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 227px 1fr 228px;
-  padding: 10px;
+  padding: var(--offset);
+  margin-block-end: 29px;
   width: 100%;
   min-height: 668px;
 
@@ -83,9 +90,6 @@
   row-gap: 12px;
 }
 
-.header__theme-menu-item {
-}
-
 .header__theme-menu-button{
   padding: 3px 13px;
   color: var(--accent-color);
@@ -111,6 +115,7 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--accent-color);
+  pointer-events: none;
 }
 
 .header__logo {
@@ -133,9 +138,64 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
-
-
 }
-.page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+
+/* MAIN BODY */
+.content {
+  padding: var(--offset);
+}
+
+.content-section {
+  margin-block-end: 50px;
+}
+
+.section-title {
+  color: var(--accent-color);
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+  margin-block-end: 20px;
+}
+
+.content__paragraph {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-block-end: 20px;
+}
+
+.contnent-paragraph-title {
+  color: #000028;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+.content__text {
+  color: #F1B2CE;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px; /* 130% */
+}
+
+
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: #000028;
+}
+
+.thin-text { 
+  font-weight: 400;
+}
+
+.link-text {
+  text-decoration: none;
+  text-shadow: 1px 1px 0px var(--accent-color);
 }
