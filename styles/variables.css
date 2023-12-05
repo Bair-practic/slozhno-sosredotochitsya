@@ -8,3 +8,9 @@
   --logo-color: #DB00FF;
   --dark-btn-hover-color: rgba(255, 0, 112, 0.40);
 } 
+
+@media (768px <= width <=1024px) {
+  .page {
+    --offset: 20px;
+  }
+}

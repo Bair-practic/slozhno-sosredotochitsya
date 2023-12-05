@@ -5,8 +5,10 @@
 .page {
   background-image: url(/images/cover-image-dark.png);
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
   background-color: #000028;
+  padding: var(--offset);
 
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
@@ -16,12 +18,14 @@
 .header {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 227px 1fr 228px;
-  padding: var(--offset);
-  margin-block-end: 29px;
+  grid-template-rows: 1fr min-content 1fr;
+  margin-block-end: calc(40px + var(--offset));
   width: 100%;
-  min-height: 668px;
-
+  min-height: 648px;
+  grid-template-areas: 
+  "menu"
+  "logo"
+  "text";
 }
 
 .header::before,
@@ -57,7 +61,7 @@
 .header__rec-decoration::before {
   content: 'rec';
   color: var(--accent-color);
-  margin-inline-end: var(--offset);
+  margin-inline-end: 10px;
   text-align: center;
   text-transform: uppercase;
   font-family: IBM Plex Mono;
@@ -80,6 +84,7 @@
 }
 
 .header__theme-menu {
+  grid-area: menu;
   justify-self: end;
   align-self: center;
 }
@@ -119,6 +124,7 @@
 }
 
 .header__logo {
+  grid-area: logo;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--logo-color);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -131,6 +137,7 @@
 }
 
 .header__text {
+  grid-area: text;
   align-self: center;
   color: #000028;
   font-family: IBM Plex Mono;
@@ -140,13 +147,34 @@
   line-height: 23.4px; /* 130% */
 }
 
-/* MAIN BODY */
-.content {
-  padding: var(--offset);
+@media (768px <= width <=1024px) {
+  .header {
+    min-height: 984px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 2fr min-content 2fr;
+    margin-block-end: calc(60px + var(--offset));
+
+    grid-template-areas: 
+    "menu menu"
+    "logo logo"
+    ". text";
+  }
+
+  .header__theme-menu {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .header__logo {
+    position: relative;
+    left: -20px;
+  }
 }
 
+/* MAIN BODY */
+
 .content__section {
-  margin-block-end: 50px;
+  margin-block-end: calc(40px + var(--offset));
 }
 
 .section-title {
@@ -184,6 +212,10 @@
   line-height: 23.4px; /* 130% */
 }
 
+h2 + h2 { 
+  margin-block-end: 20px;
+}
+
 
 .title-decor {
   background-color: var(--accent-color);
@@ -199,33 +231,94 @@
   text-shadow: 1px 1px 0px var(--accent-color);
 }
 
+@media (768px <= width <=1024px) {
+  .content__section { 
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content min-content;
+    column-gap: 20px;
+  }
+
+  .section-title {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .second-section .content__paragraph {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .third-section .section-title {
+    grid-row-start: 1;
+    grid-row-end: 9;
+  }
+
+}
+
 /*GALLERY*/
 
 .content__gallery {
   display: grid;
   row-gap: 10px;
-  margin-block-end: 30px;
 }
 
 .content__gallerry-img {
   width: 100%;
-  background-position: center;
-  background-size: contain;
+  height: 100%;
+  object-fit: cover;
 }
+
+@media (768px <= width <=1024px) {
+  .content__gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    gap: 20px;
+    margin-block-end: 80px;
+
+  }
+
+  .content__gallery .contnent-paragraph-title {
+    grid-column: 1 / 4;
+  }
+
+  .img-sunset {
+    grid-column: 1/ 3;
+  }
+
+  .img-ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+
+  .img-tape {
+    grid-row: 3 / 5;
+  }
+
+  .img-street {
+    grid-column: 2 / 4;
+  }
+}
+
 
 /* FOOTER */
 
 .footer {
-  display: flex;
   position: relative;
-  width: 100%;
-  min-height: 667px;
-  padding: var(--offset);
+  display: grid;
+  min-height: 648px;
+  place-items: center;
 }
 
 .footer__logo {
-  text-shadow: 2px 2px 0px var(--accent-color);
-  margin: auto;
+  color: #DB00FF;
+  text-shadow: 2px 2px 0px #FF0070;
+  font-family: IBM Plex Mono;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%; /* 99px */
+  
 }
 
 .footer-corner::before,
@@ -251,4 +344,11 @@
   width: 25px;
   border-right: 1px solid var(--accent-color);
   border-top: 1px solid var(--accent-color) ;
+}
+
+
+@media (768px <= width <=1024px) {
+  .footer {
+    min-height: 984px;
+  }
 }
