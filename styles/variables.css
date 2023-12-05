@@ -3,14 +3,16 @@
   и их переопределение под различные устройства
 */
 :root {
+  --background-image: url(/images/cover-image-dark.png);
   --accent-color: #FF0070;
   --offset: 10px;
   --logo-color: #DB00FF;
-  --dark-btn-hover-color: rgba(255, 0, 112, 0.40);
-} 
+  --accent-text-color: #F1B2CE;
+  --btn-hover-color: rgba(255, 0, 112, 0.40);
+  --background-color: #000028;
+  --shadow-logo-color: #FF0070;
+  --shadow-link-color: #FF0070;
+  --section-title-color: #FF0070;
+  --hidden-status: visible;
 
-@media (768px <= width <=1024px) {
-  .page {
-    --offset: 20px;
-  }
-}
+} 

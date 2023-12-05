@@ -3,11 +3,11 @@
 
 
 .page {
-  background-image: url(/images/cover-image-dark.png);
+  background-image: var(--background-image);
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #000028;
+  background-color: var(--background-color);
   padding: var(--offset);
 
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
@@ -34,13 +34,14 @@
   content: '';
   display: block;
   position: absolute;
+  
 }
 
 .decorated-zone::before {
   bottom: 0;
   left: 0;
-  height: 24px;
-  width: 24px;
+  height: 25px;
+  width: 25px;
   border-left: 1px solid var(--accent-color);
   border-bottom: 1px solid var(--accent-color) ;
 }
@@ -57,6 +58,7 @@
 .header__rec-decoration{
   position: absolute;
   right: 10px;
+  visibility: var(--hidden-status);
 }
 
 .header__rec-decoration::before {
@@ -78,7 +80,7 @@
   display: inline-block;
   width: 9px;
   height: 9px;
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--shadow-color);
   border-radius: 50%;
   background-color: var(--accent-color);
   
@@ -111,7 +113,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--dark-btn-hover-color);
+  outline: 1px solid var(--btn-hover-color);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -128,7 +130,7 @@
   grid-area: logo;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--logo-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--shadow-logo-color);
   font-family: IBM Plex Mono;
   font-style: normal;
   font-weight: 700;
@@ -149,6 +151,9 @@
 }
 
 @media (768px <= width) {
+  .page {
+    --offset: 20px;
+  }
   .header {
     min-height: 984px;
     grid-template-columns: 50% 50%;
@@ -201,7 +206,7 @@
 }
 
 .section-title {
-  color: var(--accent-color);
+  color: var(--section-title-color);
   font-family: IBM Plex Mono;
   font-size: 18px;
   font-style: normal;
@@ -218,7 +223,6 @@
 }
 
 .contnent-paragraph-title {
-  color: #000028;
   font-family: IBM Plex Mono;
   font-size: 18px;
   font-style: normal;
@@ -227,7 +231,7 @@
 }
 
 .content__text {
-  color: #F1B2CE;
+  color: var(--accent-text-color);
   font-family: IBM Plex Mono;
   font-size: 18px;
   font-style: normal;
@@ -242,7 +246,7 @@ h2 + h2 {
 
 .title-decor {
   background-color: var(--accent-color);
-  color: #000028;
+  color: var(--background-color);
 }
 
 .thin-text { 
@@ -251,7 +255,7 @@ h2 + h2 {
 
 .link-text {
   text-decoration: none;
-  text-shadow: 1px 1px 0px var(--accent-color);
+  text-shadow: 1px 1px 0px var(--shadow-link-color);
 }
 
 @media (768px <= width) {
@@ -356,30 +360,14 @@ h2 + h2 {
 }
 
 .footer__logo {
-  color: #DB00FF;
-  text-shadow: 2px 2px 0px #FF0070;
+  color:  var(--logo-color);
+  text-shadow: 2px 2px 0px var(--shadow-logo-color);
   font-family: IBM Plex Mono;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 99px */
   
-}
-
-.footer-corner::before,
-.footer-corner::after{
-  content: '';
-  display: block;
-  position: absolute;
-}
-
-.footer-corner::before {
-  bottom: var(--offset);
-  left: var(--offset);
-  height: 24px;
-  width: 24px;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color) ;
 }
 
 .footer-corner::after {
