@@ -147,11 +147,11 @@
   line-height: 23.4px; /* 130% */
 }
 
-@media (768px <= width <=1024px) {
+@media (768px <= width) {
   .header {
     min-height: 984px;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 2fr min-content 2fr;
+    grid-template-rows: 1fr min-content 1fr;
     margin-block-end: calc(60px + var(--offset));
 
     grid-template-areas: 
@@ -169,6 +169,28 @@
     position: relative;
     left: -20px;
   }
+}
+
+@media (1024px <= width) {
+  .header {
+    min-height: 728px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+  
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+
+  .header__logo {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+  }
+  
 }
 
 /* MAIN BODY */
@@ -231,7 +253,7 @@ h2 + h2 {
   text-shadow: 1px 1px 0px var(--accent-color);
 }
 
-@media (768px <= width <=1024px) {
+@media (768px <= width) {
   .content__section { 
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -244,17 +266,39 @@ h2 + h2 {
     grid-row-end: 3;
   }
 
-  .second-section .content__paragraph {
+  .content__second-section .content__paragraph {
     grid-column-start: 1;
     grid-column-end: 3;
   }
 
-  .third-section .section-title {
+  .content__third-section .section-title {
     grid-row-start: 1;
     grid-row-end: 9;
   }
 
 }
+
+@media (1024px <= width) {
+  .content__section {
+    column-gap: 10px;
+    
+  }
+  .content__second-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+    column-gap: 20px;
+
+  }
+  .content__second-section .section-title {
+    
+  }
+
+  .content__second-section .content__paragraph {
+    grid-row: 3 / 4;
+    grid-column: auto;
+  }
+} 
 
 /*GALLERY*/
 
@@ -269,7 +313,7 @@ h2 + h2 {
   object-fit: cover;
 }
 
-@media (768px <= width <=1024px) {
+@media (768px <= width) {
   .content__gallery {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, min-content);
@@ -347,8 +391,17 @@ h2 + h2 {
 }
 
 
-@media (768px <= width <=1024px) {
+@media (768px <= width <1024px) {
   .footer {
     min-height: 984px;
+  }
+}
+@media (1024px <= width ) {
+  .footer {
+    min-height: 728px;
+  }
+
+  .footer__logo {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
