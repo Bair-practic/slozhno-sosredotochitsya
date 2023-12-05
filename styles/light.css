@@ -22,6 +22,7 @@
 }
 
 :root.theme-light {
+  
   /* Переменные светлой темы */    
 }
 
@@ -38,6 +39,5 @@
   --shadow-link-color: #FF8DCB;
   --hidden-status: hidden;
   --section-title-color: #353430;
-      /* Дублируем переменные светлой темы */    
   }
 }
