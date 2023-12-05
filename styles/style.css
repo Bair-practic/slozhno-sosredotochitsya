@@ -174,7 +174,6 @@
 @media (1024px <= width) {
   .header {
     min-height: 728px;
-    height: 100vh;
   }
 
   .header__theme-menu {
