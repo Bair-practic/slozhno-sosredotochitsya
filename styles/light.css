@@ -10,42 +10,42 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --background-image: url("../images/cover-image-light.png");
-  --accent-color: #FF8DCB;
-  --accent-text-color:#353430;
-  --logo-color: #FFC2E6;
-  --btn-hover-color: rgba(50, 49, 45, 0.40);
+  --accent-color: #ff8dcb;
+  --accent-text-color: #353430;
+  --logo-color: #ffc2e6;
+  --hover-color: rgba(50, 49, 45, 0.4);
   --background-color: #353430;
-  --shadow-link-color: #FF8DCB;
+  --shadow-link-color: #ff8dcb;
   --hidden-status: hidden;
   --section-title-color: #353430;
-  
+  --shadow-logo-color: #ff0070;
 }
 
-:root.theme-light {
-  --background-image: url("../images/cover-image-light.png");
-  --accent-color: #FF8DCB;
-  --accent-text-color:#353430;
-  --logo-color: #FFC2E6;
-  --btn-hover-color: rgba(50, 49, 45, 0.40);
-  --background-color: #353430;
-  --shadow-link-color: #FF8DCB;
-  --hidden-status: hidden;
-  --section-title-color: #353430;
-  /* Переменные светлой темы */    
+@media (width < 1024px) {
+  .header__logo {
+    --shadow-logo-color: #ff8dcb;
+  }
 }
 
 /* Остальные стили */
 
 @media (prefers-color-scheme: light) {
-:root {
-  --background-image: url("../images/cover-image-light.png");
-  --accent-color: #FF8DCB;
-  --accent-text-color:#353430;
-  --logo-color: #FFC2E6;
-  --btn-hover-color: rgba(50, 49, 45, 0.40);
-  --background-color: #353430;
-  --shadow-link-color: #FF8DCB;
-  --hidden-status: hidden;
-  --section-title-color: #353430;
+  :root {
+    --background-image: url("../images/cover-image-light.png");
+    --accent-color: #ff8dcb;
+    --accent-text-color: #353430;
+    --logo-color: #ffc2e6;
+    --hover-color: rgba(50, 49, 45, 0.4);
+    --background-color: #353430;
+    --shadow-link-color: #ff8dcb;
+    --hidden-status: hidden;
+    --shadow-logo-color: #ff0070;
+    --section-title-color: #353430;
+  }
+
+  @media (width < 1024px) {
+    .header__logo {
+      --shadow-logo-color: #ff8dcb;
+    }
   }
 }
