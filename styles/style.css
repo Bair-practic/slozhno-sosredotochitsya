@@ -267,15 +267,26 @@ h2 + h3 {
     column-gap: 20px;
   }
 
+
   .section-title {
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 9;
   }
 
-  .content__what-section .content__paragraph {
+  .content__what-section .section-title {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .content__what-section .container-paragraph {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+
+  /* .content__what-section .content__paragraph {
     grid-column-start: 1;
     grid-column-end: 3;
-  }
+  } */
 
   .content__why-section .section-title {
     grid-row-start: 1;
@@ -292,6 +303,7 @@ h2 + h3 {
   .content__section {
     column-gap: 10px;
   }
+  
   .content__what-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -300,14 +312,15 @@ h2 + h3 {
     column-gap: 20px;
   }
 
-  .section-title{
-    grid-column: 1/4;
+  .content__what-section .section-title{
+    grid-row: 1/2;
   }
 
-  .content__what-section .content__paragraph {
-    /* grid-row: 3/4;
-    grid-column: auto; */
-    
+  .content__what-section .container-paragraph {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1/4;
+    gap: 20px;
   }
 }
 
