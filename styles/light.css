@@ -22,7 +22,7 @@
 }
 
 @media (width < 1024px) {
-  .logo {
+  .theme_light .logo {
     --shadow-logo-color: #ff8dcb;
   }
 }

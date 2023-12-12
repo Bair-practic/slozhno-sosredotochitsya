@@ -382,6 +382,10 @@ h2 + h3 {
   min-height: 648px;
 }
 
+.footer__logo{
+  text-shadow: 2px 2px 0px var(--shadow-logo-color);
+}
+
 @media (768px <= width < 1024px) {
   .footer {
     min-height: 984px;
