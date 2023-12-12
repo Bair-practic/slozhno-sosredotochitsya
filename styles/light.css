@@ -22,7 +22,7 @@
 }
 
 @media (width < 1024px) {
-  .header__logo {
+  .logo {
     --shadow-logo-color: #ff8dcb;
   }
 }
